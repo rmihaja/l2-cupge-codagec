@@ -30,9 +30,9 @@ int main()
 {
     int t[TAILLE];
     if (crible(t) != 0)
-        return 307;
+        return 404;
 
-    while (1) // ? il n'y a pas de wkeyword true en C
+    while (1) // ? il n'y a pas de keyword 'true' en C
     {
         int entier;
         printf("Veuillez entrer un entier : ");
