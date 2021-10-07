@@ -2,6 +2,12 @@
 
 float **CreerMatrice(int n, int m)
 {
+    float **matrice = malloc(sizeof(float *) * n);
+    for (int i = 0; i < n; i++)
+    {
+        matrice[i] = malloc(sizeof(float) * m);
+    }
+    return matrice;
 }
 
 #ifdef TESTS
@@ -22,7 +28,7 @@ int main()
         {
             printf(" %5.2f ", M[i][j]);
         }
-        print(" )\n");
+        printf(" )\n");
     }
     return 0;
 }
