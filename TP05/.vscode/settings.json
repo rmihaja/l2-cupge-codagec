@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.geojson": "json",
+        "stdlib.h": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

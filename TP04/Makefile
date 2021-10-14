@@ -13,7 +13,7 @@
 
 # ? output : fichier à créer 
 # ~/Informatique/S3/bin/CreerMatrice
-# 	-o ~/Informatique/S3/bin/CreerMatrice
+# -o ~/Informatique/S3/bin/CreerMatrice
 
 # -c # ? pas executable, compilation partielle
 
