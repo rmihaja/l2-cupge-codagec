@@ -5,12 +5,15 @@ LIB=-lm
 TESTS=-DTESTS -DUSECOLORS
 WARNINGS=-ggdb3 -Wall -Wextra -Werror
 OUTPUTDIR=~/Informatique/S3/bin
+MODULES=nouvelle_fraction.o
+
+# * variables init
 
 %.o: %.c
 	gcc $(INCLUDE) $(WARNINGS) -c $*.c
 
 $(OUTPUTDIR)/%: %.c
-	gcc $(INCLUDE) $(WARNINGS) $(TESTS) $*.c -o $(OUTPUTDIR)/$*
+	gcc $(INCLUDE) $(WARNINGS) $(TESTS) $*.c $(MODULES) -o $(OUTPUTDIR)/$*
 
 run/%.c: $(OUTPUTDIR)/%
 	$(OUTPUTDIR)/$*

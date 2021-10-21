@@ -1,18 +1,23 @@
 #include <stdio.h>
 #include "fraction.h"
 
-void print_fraction(struct fraction_s f) {
-    printf("%d/%d", *numerateur(f), *denominateur(f));
+void print_fraction(struct fraction_s *f) {
+    printf("%d/%d\n", *numerateur(f), *denominateur(f));
 }
 
 #ifdef TESTS
-// si nécessaire
 
 #include "tests.h"
 
 int main() {
-    // tests de la fonction
-    return 0;
+    struct fraction_s *f;
+    f = nouvelle_fraction(2, 3);
+    print_fraction(f);
+    f = nouvelle_fraction(-47, 8);
+    print_fraction(f);
+    f = nouvelle_fraction(6, 15);
+    print_fraction(f);
+    return 0;   
 }
 
 #endif
