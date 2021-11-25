@@ -1,14 +1,9 @@
 INCLUDE = -I ~/Informatique/S3/include
 LIBS = -L ~/Informatique/S3/lib
-MODULES = 
+MODULES = lire_fin_ligne.o lire_entier.o lire_decimal.o
 WARNINGS = -Wall -Werror -Wextra -ggdb3
 DEST = ~/Informatique/S3/bin
 TESTS = -DTESTS -DUSECOLORS
-
-# * dependencies compile 
-
-%.o: %.c 
-	gcc $(OPTIONS) $(INCLUDE) $(WARNINGS) -c -o $@ $
 
 # * programme compile
 
@@ -24,4 +19,14 @@ $(DEST)/%: %.c
 # * unit tests
 
 test/%: $(DEST)/%
-	$< toto 12 argument3
+	$< 12 toto argument3
+
+testf/lire_fin_ligne: $(DEST)/lire_fin_ligne
+	echo "" | $(<)
+# ? printf allows '\n' character, not echo
+	printf " \t  \n" | $<
+	printf " \t  \nabc" | $<
+	printf "azerty\n" | $< 
+
+testf/%: $(DEST)/%
+	printf "51a\n abc\n 1.3\n 5\n" | $<

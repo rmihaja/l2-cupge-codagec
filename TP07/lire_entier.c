@@ -1,23 +1,19 @@
 #include <stdio.h>
-#include <ctype.h>
+#include "entrees.h"
 
-int lire_entier(int *entier) {
-    char *ligne;
-    char c;
-
-    while (test_entier(ligne)) {
-        scanf("%m[^\n]%c", &ligne, &c);
-    }
-    return 0;
+void lire_entier(int *entier) {
+    do {
+        printf("\nVeuillez entrer un entier :");
+    } while (scanf("%d", entier) == 0 || lire_fin_ligne() > 0);
 }
-
-test_entier()
 
 #ifdef TESTS
 
-int main(int argc, char const *argv[])
+int main()
 {
-    /* code */
+    int i;
+    lire_entier(&i);
+    printf("\n[TEST] Entier lu: %d\n", i);
     return 0;
 }
 
